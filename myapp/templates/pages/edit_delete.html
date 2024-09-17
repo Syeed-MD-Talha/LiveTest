@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  {% if contacts %}
+    {% for contact in contacts %}
+      <h2>{{ contact.first_name }}</h2>
+      <p>{{ contact.email }}</p>
+      <p>{{ contact.phone_number }}</p>
+       <a href="{% url 'edit' contact.id %}">Edit</a>
+       <a href="{% url 'delete' contact.id %}">Delete</a>
+      <hr>
+    {% endfor %}
+  {% else %}
+    <p>No contacts available.</p>
+  {% endif %}
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  {% if contact %}
+      <p><strong>First_name:</strong> {{ contact.first_name }}</p>
+      <p><strong>Last_name:</strong> {{ contact.last_name }}</p>
+      <p><strong>Email:</strong> {{ contact.email }}</p>
+      <p><strong>PhoneNumber:</strong> {{ contact.phone_number }}</p>
+      <p><strong>Address:</strong> {{ contact.address }}</p>
+  {% else %}
+    <p>No contacts available.</p>
+  {% endif %}
+{% endblock content %}
